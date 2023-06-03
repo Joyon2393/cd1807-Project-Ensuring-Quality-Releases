@@ -1,5 +1,5 @@
 #!/bin/bash
-RESOURCE_GROUP_NAME="Azuredevops"
+RESOURCE_GROUP_NAME="cloud-shell-storage-westeurope"
 STORAGE_ACCOUNT_NAME="tfstate$RANDOM$RANDOM"
 CONTAINER_NAME="tfstate"
 
