@@ -18,6 +18,7 @@ variables:
   projectRoot: $(System.DefaultWorkingDirectory)
   # Environment name
   environmentName: 'test'
+  vmImageName: 'ubuntu-latest'
 
 stages:
 #--------------------------------------------#  
@@ -26,6 +27,9 @@ stages:
 - stage: Build
   jobs:
   - job: BuildInfrastructure
+    pool:
+      vmImage: $(vmImageName)
+      
     steps:
     #--------------------------------------------#  
     # Use Terraform to create the Infrastructure      
