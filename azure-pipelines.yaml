@@ -46,7 +46,7 @@ stages:
       displayName: 'Terrafom init'
       inputs:
         provider: 'azurerm'
-        command: 'init'
+        command: 'init --reconfigure'
         workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
         backendServiceArm: '$(azureServiceConnectionId)'
         backendAzureRmResourceGroupName: 'cloud-shell-storage-westeurope'
