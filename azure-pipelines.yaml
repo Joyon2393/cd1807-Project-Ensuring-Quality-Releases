@@ -30,7 +30,7 @@ stages:
     #--------------------------------------------#  
     # Use Terraform to create the Infrastructure      
     # Install Terraform on the pipeline agent 
-    - task: TerraformInstaller
+    - task: TerraformInstaller@0
       displayName: install terraform
       inputs:
         terraformVersion: latest
