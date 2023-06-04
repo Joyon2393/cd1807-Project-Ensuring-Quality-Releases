@@ -42,7 +42,7 @@ stages:
     
     # Run Terraform Init on the pipeline agent 
     # ToDo: Replace the resource group name, storage account name, and container name below
-    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV3@0
+    - task: TerraformTaskV1@0
       displayName: 'Terrafom init'
       inputs:
         provider: 'azurerm'
