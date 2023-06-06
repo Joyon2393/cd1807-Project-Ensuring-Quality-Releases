@@ -126,9 +126,9 @@ stages:
       inputs:
         testResultsFormat: 'JUnit'
         testResultsFiles: '**/TEST-*.xml'
-        searchFolder:       # ToDo
+        searchFolder:       '$(System.DefaultWorkingDirectory)' 
         mergeTestResults: true
-        testRunTitle:       # ToDo
+        testRunTitle:    'Newman Test'   
 
     #--------------------------------------------#
     # Selenium (UI) Test Suite - Archive the package  
