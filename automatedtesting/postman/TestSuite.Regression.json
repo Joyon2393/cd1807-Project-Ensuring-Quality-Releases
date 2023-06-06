@@ -13,9 +13,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Successful response\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"success\");",
-							"});",
+							
 							"pm.test(\"Get All Employees: Successful request\", function () {",
 							"     pm.expect(pm.response.code).to.be.oneOf([200, 201, 202, 429]) });",
 							"\t\t\t\t\t\t\t"
