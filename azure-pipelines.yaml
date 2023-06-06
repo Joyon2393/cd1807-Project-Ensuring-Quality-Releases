@@ -180,7 +180,7 @@ stages:
   jobs:
   #--------------------------------------------#  
   # Deploy FakeRestAPI Web App
-  # ToDo: Provide <environment name> you created in your DevOps project
+ 
   - deployment: FakeRestAPI
     pool:
       vmImage: 'ubuntu-latest'      
@@ -194,7 +194,7 @@ stages:
             inputs:
               azureSubscription: 'test_connection1'   
               appName: 'myApplication2393-AppService'               
-              appType: webApp
+              appType: webAppLinux
               package: $(Pipeline.Workspace)/<artifact>/<archiveFile>       # ToDo: Use the published zip artifact. 
           #--------------------------------------------#    
           # Run JMeter test suite against the App Service
