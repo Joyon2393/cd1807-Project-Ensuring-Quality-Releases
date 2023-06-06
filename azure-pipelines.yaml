@@ -195,7 +195,7 @@ stages:
               azureSubscription: 'test_connection1'   
               appName: myApplication2393-AppService               
               appType: webAppLinux
-              package: '$(System.DefaultWorkingDirectory)/**/*.zip'   # ToDo: Use the published zip artifact. 
+              package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip   # ToDo: Use the published zip artifact. 
           #--------------------------------------------#    
           # Run JMeter test suite against the App Service
           - task: CmdLine@2
