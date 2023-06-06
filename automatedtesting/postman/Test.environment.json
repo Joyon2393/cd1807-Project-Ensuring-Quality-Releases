@@ -1,0 +1,45 @@
+{
+	"id": "d4f017c3-182e-4d2e-a902-ecec55fb2bf0",
+	"name": "Test",
+	"values": [
+		{
+			"key": "name",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "salary",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "age",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "id",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "newSalary",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "newId",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-06-06T20:01:06.564Z",
+	"_postman_exported_using": "Postman/10.14.8-230606-0439"
+}
