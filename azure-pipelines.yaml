@@ -193,7 +193,7 @@ stages:
             displayName: 'Deploy Azure Web App'
             inputs:
               azureSubscription: 'test_connection1'   
-              appName: 'myApplication2393-AppService'               
+              appName: myApplication2393-AppService               
               appType: webAppLinux
               package: $(Pipeline.Workspace)/<artifact>/<archiveFile>       # ToDo: Use the published zip artifact. 
           #--------------------------------------------#    
