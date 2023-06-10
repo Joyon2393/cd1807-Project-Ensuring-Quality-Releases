@@ -206,7 +206,7 @@ stages:
                 unzip -o $(Build.BuildId)-perftests.zip
                 ./apache-jmeter-5.5/bin/jmeter -n -t PerformanceTestSuite.jmx -j jmeter.log -f
                 cat jmeter.log                                                                           
-              workingDirectory: $(Pipeline.Workspace)/drop-fakerestapi    
+              workingDirectory: $(Pipeline.Workspace)/drop-perftests 
               
   #--------------------------------------------#  
   # Selenium | Functional UI Tests
