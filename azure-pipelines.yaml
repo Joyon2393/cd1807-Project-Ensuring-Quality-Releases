@@ -249,7 +249,7 @@ stages:
                     unzip -o chromedriver_linux64.zip
                     sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                 fi
-                export PATH=$PATH:/home/testuser/app
+                export PATH=$PATH:/home/testuser/app/chromedriver
                 set -x #echo o
                 ls $PWD
                 echo "Starting Selenium Tests"
