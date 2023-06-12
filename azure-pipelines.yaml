@@ -228,9 +228,22 @@ stages:
               targetType: 'inline'
               script: |           
                 cd /home/vsts/work/1/drop-perftests
-                pwd
-                ls
+                sudo apt-get upgrade -y
+                sudo apt-get install python3-pip -y
+                sudo apt-get install unzip -y
+                sudo apt-get install -y chromium-browser
+                pip3 install selenium
+               
                 unzip -o $(Build.BuildId)-perftests.zip
+                LATEST=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+                wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
+                unzip -o chromedriver_linux64.zip
+                sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
+                set -x #echo o
+                ls $PWD
+                echo "Starting Selenium Tests"
+                python3 login.py >> selenium.log
+                echo "Completed Selenium Tests. Check selenium.log for results."
 
 
                 
