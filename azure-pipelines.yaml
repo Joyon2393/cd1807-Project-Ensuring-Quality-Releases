@@ -229,7 +229,11 @@ stages:
               script: |           
                 #! /bin/bash
                 
-                ls
+                yourfilenames=`ls ./*.py`
+                for eachfile in $yourfilenames
+                do
+                echo $eachfile
+                done
                 pwd
                 sudo apt-get upgrade -y
                 sudo apt-get install python3-pip -y
