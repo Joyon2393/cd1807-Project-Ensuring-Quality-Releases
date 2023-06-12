@@ -221,7 +221,7 @@ stages:
         deploy:
           steps:
           - download: current
-            artifact: drop-uitests    
+            artifact: drop-perftests    
             
           - task: Bash@3
             inputs:
