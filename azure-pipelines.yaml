@@ -227,6 +227,9 @@ stages:
             inputs:
               targetType: 'inline'
               script: |           
+                cd /home/vsts/work/1
+                pwd
+                ls
                 unzip -o $(Build.BuildId)-perftests.zip
 
 
