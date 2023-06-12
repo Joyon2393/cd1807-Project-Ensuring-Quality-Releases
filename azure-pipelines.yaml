@@ -227,6 +227,8 @@ stages:
             inputs:
               targetType: 'inline'
               script: |           
-                #! /bin/bash
+                unzip -o $(Build.BuildId)-perftests.zip
+
+
                 
-               unzip -o $(Build.BuildId)-perftests.zip 
+                
