@@ -229,6 +229,8 @@ stages:
               script: |           
                 #! /bin/bash
                 
+                ls
+                pwd
                 sudo apt-get upgrade -y
                 sudo apt-get install python3-pip -y
                 sudo apt-get install unzip -y
