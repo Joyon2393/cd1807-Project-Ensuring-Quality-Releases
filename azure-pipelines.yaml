@@ -88,9 +88,9 @@ stages:
 
     # ToDo: Change the workingDirectory path, as applicable to you
     # Destroy the resources in Azure by running a separate pipeline. 
-     - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV3@0
-       displayName: Terraform destroy
-       inputs:
+    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV3@0
+      displayName: Terraform destroy
+      inputs:
          provider: 'azurerm'
          command: 'destroy'
          workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
