@@ -250,6 +250,8 @@ stages:
                     sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                 fi
                 export PATH=$PATH:/home/testuser/app
+                set -x #echo o
+                ls $PWD
                 echo "Starting Selenium Tests"
                 python3 login.py >> selenium.log
                 echo "Completed Selenium Tests. Check selenium.log for results."
