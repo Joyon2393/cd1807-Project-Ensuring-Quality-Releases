@@ -13,7 +13,7 @@ def login (user, password):
     options.add_argument("--no-sandbox")
     options.add_argument('--ignore-certificate-errors')
     print ('Browser started successfully. Navigating to the demo page to login.')
-    driver = webdriver.Chrome(options=options, executable_path='/usr/bin/chromedriver')
+    driver = webdriver.Chrome(options=options)
     driver.get('https://www.saucedemo.com/')
 
 login('standard_user', 'secret_sauce')
