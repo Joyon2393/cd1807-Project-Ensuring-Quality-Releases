@@ -236,7 +236,7 @@ stages:
                 google-chrome --version
                 unzip -o $(Build.BuildId)-perftests.zip
                 LATEST=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-                wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
+                wget http://chromedriver.storage.googleapis.com/113.0.5672.24/chromedriver_linux64.zip
                 unzip -o chromedriver_linux64.zip
                 sudo ln -s $PWD/chromedriver /usr/bin/chromedriver
                
