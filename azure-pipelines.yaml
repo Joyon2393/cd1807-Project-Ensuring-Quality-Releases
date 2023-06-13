@@ -241,7 +241,7 @@ stages:
                 sudo ln -s $PWD/chromedriver /usr/bin/chromedriver
                
                 echo "Starting Selenium Tests"
-                python3 login.py 
+                python3 login.py | tee -a selenium.log
                 echo "Completed Selenium Tests. Check selenium.log for results."
 
 
