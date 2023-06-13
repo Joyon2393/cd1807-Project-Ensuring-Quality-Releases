@@ -233,12 +233,12 @@ stages:
                 sudo apt-get install unzip -y
                 sudo apt-get install -y chromium-browser
                 pip3 install selenium
-               
+                google-chrome --version
                 unzip -o $(Build.BuildId)-perftests.zip
                 LATEST=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
                 wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
                 unzip -o chromedriver_linux64.zip
-                sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
+                sudo ln -s $PWD/chromedriver /usr/bin/chromedriver
                
                 echo "Starting Selenium Tests"
                 python3 login.py >> selenium.log
