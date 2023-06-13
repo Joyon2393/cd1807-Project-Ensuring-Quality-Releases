@@ -239,9 +239,7 @@ stages:
                 wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
                 unzip -o chromedriver_linux64.zip
                 sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
-                set -x #echo o
-                ls $PWD
-                export PATH=$PATH: /home/vsts/work/1/drop-perftests/chromedriver
+               
                 echo "Starting Selenium Tests"
                 python3 login.py >> selenium.log
                 echo "Completed Selenium Tests. Check selenium.log for results."
