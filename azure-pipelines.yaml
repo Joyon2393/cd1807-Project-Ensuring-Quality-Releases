@@ -204,7 +204,7 @@ stages:
                 wget "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.5.tgz"
                 tar -xf apache-jmeter-5.5.tgz
                 unzip -o $(Build.BuildId)-perftests.zip
-                ./apache-jmeter-5.5/bin/jmeter -n -t PerformanceTestSuite.jmx -j jmeter.log -f
+                ./apache-jmeter-5.5/bin/jmeter -n -t get_activity.jmx -j jmeter.log -f
                 cat jmeter.log                                                                           
               workingDirectory: $(Pipeline.Workspace)/drop-perftests 
               
@@ -241,10 +241,12 @@ stages:
                 sudo ln -s $PWD/chromedriver /usr/bin/chromedriver
                
                 echo "Starting Selenium Tests"
-                python3 login.py | tee -a selenium.log
-                cat selenium.log
-                echo "Completed Selenium Tests. Check selenium.log for results."
+                python3 login.py >> selenium.log
 
+                
+                echo "Completed Selenium Tests. Check selenium.log for results."
+                cat selenium.log
+                
 
                 
                 
