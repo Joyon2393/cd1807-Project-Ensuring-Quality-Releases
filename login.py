@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 import datetime
 
-#create log datetime
+
 def log():
     time = datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S")
     return ("log" + time)
@@ -19,9 +19,9 @@ def log():
     time = datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S")
     return ("LOG " + time)
 
-def driver_func():
+def driver():
     
-    print(f'{log()} Starting the browser...')
+    print(f'{log()} browser starting....')
     options = ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
@@ -37,26 +37,26 @@ def login (driver, user, password):
 
     username_input = driver.find_element(By.ID, 'user-name')
     username_input.send_keys(user)
-    print(f'{log()} Username: {user} provided')
+    print(f'{log()} Username: {user}')
 
     password_input = driver.find_element(By.ID, 'password')
     password_input.send_keys(password)
-    print(f'{log()} Password provided')
+    print(f'{log()} Password')
 
     login_btn = driver.find_element(By.ID,'login-button')
-    print(f'{log()} Username and password submitted')
+    print(f'{log()} Username and password provided')
     login_btn.click()
 
     product_page_header = driver.find_element(By.CLASS_NAME, 'title')
     assert product_page_header.text == "Products", "Error, login failed!"
-    print(f'{log()} Login successful')
+    print(f'{log()} OK: Login to URL "{url}" with user name "{user}" successful!')
 
-def get_cart_count(driver, class_name):
+def cart_count(driver, class_name):
     cart_badge = driver.find_element(By.CLASS_NAME, class_name)
     return int(cart_badge.text)
 
 def add_products(driver):
-    print(f'{log()} Starting to add products to the cart')
+    print(f'{log()} Looking for items to add to cart')
 
     products = []
     product_containers = driver.find_elements(By.CLASS_NAME, 'inventory_item')
@@ -69,19 +69,19 @@ def add_products(driver):
 
         print(f'{log()} {product_name} added to the cart')
     
-    final_cart_count = get_cart_count(driver,'shopping_cart_badge')
+    final_count = cart_count(driver,'shopping_cart_badge')
 
-    assert final_cart_count == len(product_containers), 'ERROR: The cart count does not match the number of products added'
+    assert final_count == len(product_containers), 'ERROR: The cart count does not match the number of products added'
 
-    print(f'{log()} Cart count matches with the number of products added')
+    print(f'{log()} number of product matches with the cart')
     print(f'{log()} All products added to the cart')
 
 def remove_products(driver):
-    print(f'{log()} Navigating to cart page')
+    print(f'{log()} Navigating to cart page ...')
     cart = driver.find_element(By.CLASS_NAME,'shopping_cart_link')
     cart.click()
 
-    print(f'{log()} Starting to remove products to the cart')
+    print(f'{log()} removing product from cart....')
     cart_with_products = driver.find_elements(By.CLASS_NAME,'cart_item')
 
     initial_cart_count = len(cart_with_products)
@@ -104,10 +104,10 @@ def remove_products(driver):
     print(f'{log()} All products removed from the cart successfully')
 
 if __name__ == "__main__":
-    driver_active = driver_func()
-    login(driver_active, 'standard_user', 'secret_sauce')
-    add_products(driver_active)
-    remove_products(driver_active)
+    driver = driver()
+    login(driver, 'standard_user', 'secret_sauce')
+    add_products(driver)
+    remove_products(driver)
     
 
 
